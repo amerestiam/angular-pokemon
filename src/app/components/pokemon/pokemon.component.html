@@ -1,0 +1,18 @@
+<ul class="menu-list">
+  <img src="{{ pokemon.sprites.front_default }}" (click)="clicSurImage()" />
+  <li>Nom : {{ pokemon.name | titlecase }}</li>
+
+  <li *ngFor="let type of pokemon.types">
+    Type : <span *ngIf="pokemon.types; else na"></span
+    >{{ type.type.name | titlecase }}
+  </li>
+  <li>
+    Taille : <span *ngIf="pokemon.height; else na"></span
+    >{{ pokemon.height /10 | number: "1.0-2" }} m
+  </li>
+  <li>
+    Poids : <span *ngIf="pokemon.weight; else na"></span
+    >{{ pokemon.weight /10 | number: "1.0-2" }} kg
+  </li>
+  <ng-template #na>N/A</ng-template>
+</ul>

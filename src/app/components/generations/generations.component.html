@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="menu" *ngIf="generations">
+    <p class="menu-label">Les différentes générations : {{nbreDeGenerations}} </p>
+    <ul class="menu-list" *ngFor="let generation of generations">
+      <li>{{ generation.name | titlecase }}</li>
+    </ul>
+  </div>
+</div>
